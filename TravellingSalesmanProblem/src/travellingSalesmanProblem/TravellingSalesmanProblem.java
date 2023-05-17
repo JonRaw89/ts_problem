@@ -10,7 +10,7 @@ public class TravellingSalesmanProblem {
 	public static int[][] readSalesmanData() throws IOException {
 		
 	    ArrayList<int[]> list = new ArrayList<>();
-	    File fileObj = new File("src/travellingSalesmanProblem/data.txt");
+	    File fileObj = new File("C:/Users/jpraw/git/ts_problem/TravellingSalesmanProblem/src/travellingSalesmanProblem/data.txt");
 	   
 	    try (Scanner scanner = new Scanner(fileObj)) {
 			while (scanner.hasNextLine()) {
@@ -33,14 +33,10 @@ public class TravellingSalesmanProblem {
 		   
 		 BasicHillClimbingAlgorithm bhc = new BasicHillClimbingAlgorithm(readSalesmanData());
 		 
+		 // Random Solution
+		 bhc.solveRandom();
 		 
-		 for (int i = 0; i < 10; i++) {
-			 // Random Solution
-			 
-			 bhc.solveRandom();
-			 
-			 // Greedy Solution
-			 bhc.solveGreedy();
-		 }
+		 // Greedy Solution
+		 bhc.solveGreedy();
 	 }
 }
