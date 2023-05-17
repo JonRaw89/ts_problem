@@ -33,10 +33,18 @@ public class TravellingSalesmanProblem {
 		   
 		 BasicHillClimbingAlgorithm bhc = new BasicHillClimbingAlgorithm(readSalesmanData());
 		 
-		 // Random Solution
-		 bhc.solveRandom();
+		 int averageRandom = 0;
+		 int averageGreedy = 0;
 		 
-		 // Greedy Solution
-		 bhc.solveGreedy();
+		 for (int i = 0; i < 10; i++) {
+			 // Random Solution
+			 averageRandom += bhc.solveRandom();
+			 
+			 // Greedy Solution
+			 averageGreedy += bhc.solveGreedy();
+		 }
+		 
+		 System.out.println("Average Random distance: " + averageRandom/10);
+		 System.out.println("Average Greedy distance: " + averageGreedy/10);
 	 }
 }

@@ -20,7 +20,6 @@ public class BasicHillClimbingAlgorithm {
 		
 	}
 	
-	
 	public int solveRandom() {
 		
 		int[] solution = createSolution();
@@ -43,7 +42,6 @@ public class BasicHillClimbingAlgorithm {
 			else {
 				i++;
 			}
-			
 		}
 		
 		System.out.println("Final Random Solution: " + Arrays.toString(solution));
