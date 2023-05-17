@@ -41,11 +41,10 @@ public class TravellingSalesmanProblem {
 		 int[] greedy = bhc.greedy();
 		 
 		 for (int i = 0; i < 10; i++) {
+			 
 			 // Random Solution
 			 averageRandom += bhc.solve(random);
 
-				
-			 
 			 // Greedy Solution
 			 averageGreedy += bhc.solve(greedy);
 		 }
