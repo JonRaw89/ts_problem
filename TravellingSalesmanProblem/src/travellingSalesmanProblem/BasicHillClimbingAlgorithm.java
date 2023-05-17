@@ -20,9 +20,7 @@ public class BasicHillClimbingAlgorithm {
 		
 	}
 	
-	public int solveRandom() {
-		
-		int[] solution = createSolution();
+	public int solve(int[] solution) {
 		
 		int i = 0;
 		while(i < MAX_ITERATIONS) {
@@ -43,9 +41,8 @@ public class BasicHillClimbingAlgorithm {
 				i++;
 			}
 		}
-		
-		System.out.println("Final Random Solution: " + Arrays.toString(solution));
-		System.out.println("Final Random Solution Distance: " + calculateTotalDistance(solution) + "\n");
+		System.out.println("Final Solution: " + Arrays.toString(solution));
+		System.out.println("Final Solution Distance: " + calculateTotalDistance(solution) + "\n");
 		
 		return calculateTotalDistance(solution);
 		
@@ -53,7 +50,7 @@ public class BasicHillClimbingAlgorithm {
 	
 	
 	
-	public int solveGreedy() {
+	public int[] greedy() {
 		
 		ArrayList<Integer> visitedCities = new ArrayList<>();
 		int[] solution = new int[numCities];		
@@ -68,10 +65,8 @@ public class BasicHillClimbingAlgorithm {
 			visitedCities.add(nxtCity);
 			city = nxtCity;
 		}
-		System.out.println("Final Greedy Solution: " + Arrays.toString(solution));
-		System.out.println("Final Greedy Solution Distance: " + calculateTotalDistance(solution) + "\n");
-		
-		return calculateTotalDistance(solution);
+
+		return solution;
 		
 	}	
 
@@ -100,9 +95,7 @@ public class BasicHillClimbingAlgorithm {
 		
 	}
 	
-	
-	
-	public int[] createSolution(){
+	public int[] random(){
 		ArrayList<Integer> randomSolution = new ArrayList<>();
 		
 		for (int i = 0; i < numCities; i++) {

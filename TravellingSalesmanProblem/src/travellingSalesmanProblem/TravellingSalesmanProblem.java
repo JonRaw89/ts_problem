@@ -3,6 +3,7 @@ package travellingSalesmanProblem;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TravellingSalesmanProblem {	 
@@ -36,12 +37,17 @@ public class TravellingSalesmanProblem {
 		 int averageRandom = 0;
 		 int averageGreedy = 0;
 		 
+		 int[] random = bhc.random();
+		 int[] greedy = bhc.greedy();
+		 
 		 for (int i = 0; i < 10; i++) {
 			 // Random Solution
-			 averageRandom += bhc.solveRandom();
+			 averageRandom += bhc.solve(random);
+
+				
 			 
 			 // Greedy Solution
-			 averageGreedy += bhc.solveGreedy();
+			 averageGreedy += bhc.solve(greedy);
 		 }
 		 
 		 System.out.println("Average Random distance: " + averageRandom/10);
